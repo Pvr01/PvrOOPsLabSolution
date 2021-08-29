@@ -11,26 +11,29 @@ public class GenerateCredentials {
 
     // Get First Name, Last name as input
 
-        /*Scanner scanner = new Scanner(System.in);
+/*        Scanner scanner = new Scanner(System.in);
         String firstName, lastName;
         System.out.println("\n Please enter the First Name\n");
         firstName = scanner.next();
-        employee.setFirstName(firstName);
         if(firstName.isEmpty()) System.out.println("Please check your First Name");
+        employee.setFirstName(firstName);
         System.out.println("\n Please enter the Last Name\n");
         lastName = scanner.next();
         if(lastName.isEmpty()) System.out.println("Please check your Last Name");
         employee.setLastName(lastName);
         String name = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
-        System.out.println("Dear " + name + " your generated credentials are as follows\nEmail ---->" + employee.getFirstName() + employee.getLastName() + "." + dept + "@gl.com\n" + "Password ---->" + generatePassword());
-*/
+        System.out.println("Dear " + name + " your generated credentials are as follows\n"
+                + generateEmail(employee, dept) + generatePassword());*/
+
         /* Implementation works for  Employee parameterized constructor */
         String string = employee.getFirstName().substring(0, 1).toUpperCase() + employee.getFirstName().substring(1);
         System.out.println("Dear " + string + " your generated credentials are as follows\n" +
-                "Email ---->" + employee.getFirstName() + employee.getLastName() + "." + dept + "@abc.com\n" +
-                "Password ---->" + generatePassword());
+                generateEmail(employee, dept) + generatePassword());
     }
 
+    public String generateEmail(Employee employee, String dept) {
+       return "Email ----> " + employee.getFirstName() + employee.getLastName() + "." + dept + "@abc.com\n";
+    }
     public String generatePassword() {
         String value = "A0b2C!dE&1F*gH#i3Jk4Lm5No6P%q9Rs7TwXy8Z@";
         int length = 8;
@@ -40,7 +43,7 @@ public class GenerateCredentials {
             builder.append(value.charAt(random.nextInt(value
                     .length())));
         }
-        return builder.toString();
+        return "Password ----> "+builder.toString();
     }
 
     public void exit() {
