@@ -7,7 +7,7 @@ You are an IT Support Administrator and are charged with the task of creating cr
 Your application should do the following:
 
 ⦁	Generate an email with the following syntax
-firstNamelastName@department.company.com
+firstNamelastName.department@company.com
 
 ⦁	Determine the department (Technical, Admin, Human Resource, Legal)
 ⦁	Generate a random password which will contain (number, capital letter, small letter & special character)
